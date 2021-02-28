@@ -1,0 +1,17 @@
+body{
+    background-color: bisque;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+}
+
+.cardbox {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5%;
+    width: 100px;
+    height: 200px;
+}
