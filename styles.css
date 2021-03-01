@@ -1,5 +1,28 @@
 body{
-    background-color: bisque;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+header{
+    height: 80px;
+    background-color: rgb(97, 138, 199);
+}
+
+p{
+    margin-top: 8px;
+}
+
+#searchbox{
+    display: flex;
+    justify-content: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    align-items: center;
+}
+
+#submit-search{
+    padding-left: 5px;
 }
 
 #container{
@@ -7,11 +30,38 @@ body{
     justify-content: center;
 }
 
-.cardbox {
+.cardbox{
     border-style: solid;
     border-width: 1px;
     border-color: black;
-    border-radius: 5%;
-    width: 100px;
+    width: 150px;
     height: 200px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    flex-grow: 1;
+    align-self: center;
+}
+
+#search-box{
+    margin: 5px;
+}
+
+.namebox{
+    background-color: rgb(97, 138, 199);
+    height: 30px;
+}
+
+#c-to-f {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 20%;
+    height: 20px;
+    width: 20px;
+    align-self: left;
+    margin: 4px;
 }
