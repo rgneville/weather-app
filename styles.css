@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: white;
     font-family: 'Roboto', sans-serif;
@@ -5,7 +11,7 @@ body{
 }
 
 header{
-    height: 80px;
+    height: 12vh;
     background-color: rgb(97, 138, 199);
 }
 
@@ -22,7 +28,7 @@ p{
 }
 
 #submit-search{
-    padding-left: 5px;
+    cursor: pointer;
 }
 
 #container{
@@ -53,15 +59,28 @@ img{
 .namebox{
     background-color: rgb(97, 138, 199);
     height: 30px;
+    width: 149px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-left-style: none;
+    margin-top: -1px;
+    vertical-align: middle;
 }
 
 #c-to-f {
     border-style: solid;
     border-width: 1px;
     border-color: black;
-    border-radius: 20%;
     height: 20px;
     width: 20px;
     align-self: left;
     margin: 4px;
+    cursor: pointer;
+}
+
+#c-to-f:hover {
+    background-color: rgb(97, 138, 199);
+    transition: 0.5s;
+    transition-timing-function: ease-out;
 }
