@@ -1,0 +1,108 @@
+$background: #C6D0D4;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+header{
+    height: 12vh;
+    background-color: $background;
+    p{
+        margin-top: 8px;
+    }
+}
+
+#searchbox{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    align-items: center;
+    #search-box{
+        margin: 5px;
+    }
+    #submit-search{
+        cursor: pointer;
+    }
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardbox{
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 0.5rem;
+    width: 500px;
+    height: 150px;
+    margin: 15px;
+    display: flex;
+    background-color: #e7e7e7;
+    flex-direction: row;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    align-content: space-around;
+    .leftContainer {
+        flex-grow: 1.5;
+        align-content: space-around;
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .tempContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .currentTempDiv {
+            font-size: 50px;
+            margin: 10px;
+        }
+        #c-to-f {
+            height: 38px;
+            width: 38px;
+            font-size: 35px;
+            margin: 4px;
+            background-color: #eeeeee;
+            cursor: pointer;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 10%;
+        }
+        #c-to-f:hover {
+            background-color: $background;
+            transition: 0.5s;
+            transition-timing-function: ease-out;
+        }
+    }
+    .rightContainer {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-content: space-around;
+        div {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        img {
+            align-self: center;
+            display: block;
+        }
+    }
+} 
+
+

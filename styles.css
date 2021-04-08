@@ -1,86 +1,170 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-body{
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  width: 750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
 }
 
-header{
-    height: 12vh;
-    background-color: rgb(97, 138, 199);
+header {
+  height: 12vh;
+  background-color: #C6D0D4;
 }
 
-p{
-    margin-top: 8px;
+header p {
+  margin-top: 8px;
 }
 
-#searchbox{
-    display: flex;
-    justify-content: center;
-    margin-left: 8px;
-    margin-right: 8px;
-    align-items: center;
+#searchbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#submit-search{
-    cursor: pointer;
+#searchbox #search-box {
+  margin: 5px;
 }
 
-#container{
-    display: flex;
-    justify-content: center;
+#searchbox #submit-search {
+  cursor: pointer;
 }
 
-.cardbox{
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    width: 150px;
-    height: 200px;
-    margin: 8px;
-    display: flex;
-    flex-direction: column;
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-img{
-    flex-grow: 1;
-    align-self: center;
+.cardbox {
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 0.5rem;
+  width: 500px;
+  height: 150px;
+  margin: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e7e7e7;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
-#search-box{
-    margin: 5px;
+.cardbox .leftContainer {
+  -webkit-box-flex: 1.5;
+      -ms-flex-positive: 1.5;
+          flex-grow: 1.5;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
-.namebox{
-    background-color: rgb(97, 138, 199);
-    height: 30px;
-    width: 149px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-left-style: none;
-    margin-top: -1px;
-    vertical-align: middle;
+.cardbox .leftContainer h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-#c-to-f {
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    height: 20px;
-    width: 20px;
-    align-self: left;
-    margin: 4px;
-    cursor: pointer;
+.cardbox .leftContainer .tempContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#c-to-f:hover {
-    background-color: rgb(97, 138, 199);
-    transition: 0.5s;
-    transition-timing-function: ease-out;
+.cardbox .leftContainer .currentTempDiv {
+  font-size: 50px;
+  margin: 10px;
 }
+
+.cardbox .leftContainer #c-to-f {
+  height: 38px;
+  width: 38px;
+  font-size: 35px;
+  margin: 4px;
+  background-color: #eeeeee;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10%;
+}
+
+.cardbox .leftContainer #c-to-f:hover {
+  background-color: #C6D0D4;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+.cardbox .rightContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.cardbox .rightContainer div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.cardbox .rightContainer img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: block;
+}
+/*# sourceMappingURL=styles.css.map */

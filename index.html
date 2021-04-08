@@ -11,17 +11,19 @@
 <body>
     <header>
         <h1>WeatherNow</h1>
-        <p>Check the current weather in multiple spots around the globe!</p>
+        <p id="subtitle">Check the current weather in multiple spots around the globe!</p>
     </header>
-    <form id="searchbox">
-        <label for="search-term">Search for weather in:</label>
-        <input type="text" id="search-box" value="London">
-    <br>
-        <button type="button" id="submit-search">
-            Submit
-        </button>
-    </form>
-    <div id="container"></div>
+    <main>
+        <form id="searchbox">
+            <label for="search-term">Search for weather in:</label>
+            <input type="text" id="search-box" value="Bristol, GB">
+        <br>
+            <button type="button" id="submit-search">
+                Submit
+            </button>
+        </form>
+        <div id="container"></div>
+    </main>
     <script src='index.js'></script>
 </body>
 </html>
