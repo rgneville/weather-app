@@ -1,18 +1,31 @@
 const submitButton = document.querySelector('#submit-search');
 const errorBox = document.querySelector('#errorBox');
 const cntnr = document.querySelector('#container');
-const locations = [
-    "Thornbury, GB",
-    "Brasilia"
-];
+const clearButton = document.querySelector('#clear-locations');
+
+function checkForStoredLocations () {
+    const localData = localStorage.getItem('savedLocations');
+    return localData ? JSON.parse(localData) : [];
+}
+
+//checks for anything in LS, returns contents of LS or a blank array to start from
+
+let locations = checkForStoredLocations();
 
 function clearDisplay () {
     cntnr.innerHTML = '';
 }
 
+function clearLocations () {
+    locations = [];
+    clearDisplay();
+    localStorage.setItem('savedLocations', JSON.stringify( [] ));
+}
+
 function addLocation () {
     let newLocation = document.querySelector('#search-box').value;
     locations.push(newLocation);
+    localStorage.setItem('savedLocations', JSON.stringify(locations));
 }
 
 function createWeatherCards () {
@@ -22,7 +35,7 @@ function createWeatherCards () {
             buildCard(result);
         })
         weather.catch(function(error) {
-            console.log(error);
+            console.log(`Something went wrong... ${error}`);
             return 404
         })
     }    
@@ -104,6 +117,10 @@ submitButton.addEventListener('click', () => {
     addLocation();
     clearDisplay();
     createWeatherCards();
+});
+
+clearButton.addEventListener('click', () => {
+    clearLocations();
 });
 
 createWeatherCards(locations);

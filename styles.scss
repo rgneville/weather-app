@@ -31,9 +31,19 @@ header{
     align-items: center;
     #search-box{
         margin: 5px;
+        border-style: none;
+        font-family: 'Roboto', sans-serif;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding: 2px;
     }
     #submit-search{
         cursor: pointer;
+        border-style: none;
+        background-color: $background;
+        padding: 2px;
+    }
+    #submit-search:hover {
+        background-color: #e7e7e7;
     }
 }
 
@@ -105,4 +115,13 @@ header{
     }
 } 
 
-
+#clear-locations{
+    cursor: pointer;
+    border-style: none;
+    background-color: $background;
+    padding: 2px;
+    margin-top: 10px;
+}
+#clear-locations:hover {
+    background-color: #e7e7e7;
+}
