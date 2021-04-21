@@ -20,6 +20,12 @@ body {
   margin: auto;
 }
 
+@media (max-width: 480px) {
+  body {
+    width: 480px;
+  }
+}
+
 header {
   height: 12vh;
   background-color: #C6D0D4;
@@ -29,7 +35,7 @@ header p {
   margin-top: 8px;
 }
 
-#searchbox {
+#searchForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,23 +48,23 @@ header p {
           align-items: center;
 }
 
-#searchbox #search-box {
+#searchForm #searchBox {
   margin: 5px;
   border-style: none;
   font-family: 'Roboto', sans-serif;
   -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 2px;
+  padding: 4px;
 }
 
-#searchbox #submit-search {
+#searchForm #submit-search {
   cursor: pointer;
   border-style: none;
   background-color: #C6D0D4;
-  padding: 2px;
+  padding: 4px;
 }
 
-#searchbox #submit-search:hover {
+#searchForm #submit-search:hover {
   background-color: #e7e7e7;
 }
 
@@ -99,6 +105,12 @@ header p {
       align-content: space-around;
 }
 
+@media (max-width: 480px) {
+  .cardbox {
+    width: 350px;
+  }
+}
+
 .cardbox .leftContainer {
   -webkit-box-flex: 1.5;
       -ms-flex-positive: 1.5;
@@ -110,6 +122,12 @@ header p {
 .cardbox .leftContainer h2 {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .cardbox .leftContainer {
+    font-size: 12px;
+  }
 }
 
 .cardbox .leftContainer .tempContainer {
@@ -184,7 +202,7 @@ header p {
   cursor: pointer;
   border-style: none;
   background-color: #C6D0D4;
-  padding: 2px;
+  padding: 4px;
   margin-top: 10px;
 }
 

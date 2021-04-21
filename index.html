@@ -11,17 +11,18 @@
 <body>
     <header>
         <h1>WeatherNow</h1>
-        <p id="subtitle">Check the current weather in multiple spots around the globe!</p>
+        <p id="subtitle">See the weather in your favourite places around the world!</p>
     </header>
     <main>
-        <form id="searchbox">
+        <form id="searchForm">
             <label for="search-term">Search for weather in:</label>
-            <input type="text" id="search-box" value="Bristol, GB">
+            <input type="text" id="searchBox" value="Bristol, GB">
         <br>
             <button type="button" id="submit-search">
                 Submit
             </button>
         </form>
+        <div id="errorBox"></div>
         <div id="container"></div>
         <button type="button" id="clear-locations">
             Clear Locations

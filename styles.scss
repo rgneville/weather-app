@@ -14,6 +14,9 @@ body{
     display: flex;
     flex-direction: column;
     margin: auto;
+    @media (max-width: 480px) {
+        width: 480px;
+    }
 }
 
 header{
@@ -24,23 +27,23 @@ header{
     }
 }
 
-#searchbox{
+#searchForm{
     display: flex;
     justify-content: center;
     margin-top: 8px;
     align-items: center;
-    #search-box{
+    #searchBox{
         margin: 5px;
         border-style: none;
         font-family: 'Roboto', sans-serif;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        padding: 2px;
+        padding: 4px;
     }
     #submit-search{
         cursor: pointer;
         border-style: none;
         background-color: $background;
-        padding: 2px;
+        padding: 4px;
     }
     #submit-search:hover {
         background-color: #e7e7e7;
@@ -66,12 +69,18 @@ header{
     flex-direction: row;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     align-content: space-around;
+    @media (max-width: 480px) {
+        width: 350px;
+    }
     .leftContainer {
         flex-grow: 1.5;
         align-content: space-around;
         h2 {
             margin-top: 10px;
             margin-bottom: 20px;
+        }
+        @media (max-width: 480px) {
+            font-size: 12px;
         }
         .tempContainer {
             display: flex;
@@ -119,7 +128,7 @@ header{
     cursor: pointer;
     border-style: none;
     background-color: $background;
-    padding: 2px;
+    padding: 4px;
     margin-top: 10px;
 }
 #clear-locations:hover {

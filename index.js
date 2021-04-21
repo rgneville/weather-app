@@ -1,4 +1,5 @@
 const submitButton = document.querySelector('#submit-search');
+const searchBox = document.querySelector('#searchBox');
 const errorBox = document.querySelector('#errorBox');
 const cntnr = document.querySelector('#container');
 const clearButton = document.querySelector('#clear-locations');
@@ -7,7 +8,6 @@ function checkForStoredLocations () {
     const localData = localStorage.getItem('savedLocations');
     return localData ? JSON.parse(localData) : [];
 }
-
 //checks for anything in LS, returns contents of LS or a blank array to start from
 
 let locations = checkForStoredLocations();
@@ -23,21 +23,28 @@ function clearLocations () {
 }
 
 function addLocation () {
-    let newLocation = document.querySelector('#search-box').value;
+    let newLocation = searchBox.value;
     locations.push(newLocation);
     localStorage.setItem('savedLocations', JSON.stringify(locations));
 }
 
-function createWeatherCards () {
+async function createWeatherCards () {
     for (let i = 0; i < locations.length; i++) {
-        let weather = getWeather(locations[i]);
-        weather.then(function(result) {
-            buildCard(result);
-        })
-        weather.catch(function(error) {
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locations[i]}&appid=221fcdab1d58f471292073096b454d21&units=metric`, {mode: 'cors'})
+        let weather = await response.json();
+        try {
+            buildCard(weather);
+            searchBox.style.borderStyle = "none";
+            errorBox.innerHTML = "";
+        } catch (error) {
             console.log(`Something went wrong... ${error}`);
+            errorBox.innerHTML = "Country not found, try again...";
+            searchBox.style.borderStyle = "solid";
+            searchBox.style.borderWidth = "2px";
+            searchBox.style.borderColor = "red";
+            locations.pop();
             return 404
-        })
+        }
     }    
 }
 
@@ -107,12 +114,6 @@ function buildCard (result) {
     cntnr.appendChild(cardContainer);
 }
 
-async function getWeather (location) {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=221fcdab1d58f471292073096b454d21&units=metric`, {mode: 'cors'})
-    const weatherData = await response.json();
-    return weatherData;
-}
-
 submitButton.addEventListener('click', () => {
     addLocation();
     clearDisplay();
@@ -121,6 +122,7 @@ submitButton.addEventListener('click', () => {
 
 clearButton.addEventListener('click', () => {
     clearLocations();
+    searchBox.style.borderStyle = "none";
 });
 
 createWeatherCards(locations);
